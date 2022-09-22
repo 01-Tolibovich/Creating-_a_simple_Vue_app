@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-приложения</title>
+</head>
+<body>
+    <div id="app">
+        <h1>String {{ message }}</h1>
+        <input type="text" v-model="message">
+        <h1>Sum: {{ 1 + 2 }}</h1>
+        <pre>{{ $data | json }}</pre>
+        <div class="student">
+            <h1>{{ sayHello() }}</h1>
+            <h1>Age: {{ age }}</h1>
+            <h1>IF Statement: {{ isStudent ? 'I am a student' : 'I am not a student' }}</h1>
+            <h1>Reverse: {{ string.split('').reverse().join('') }}</h1>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
