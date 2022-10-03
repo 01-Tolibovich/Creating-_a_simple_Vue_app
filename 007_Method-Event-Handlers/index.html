@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <div id="app">
+        <h1>007 События. Передача параметров в методы</h1>
+        <h2 @mouseover="onHover">{{ title }}: {{ counter }}</h2>
+        <button v-on:click="addCounter(5, 'Изменено на 5', $event)">+5</button><button @click="addCounter(10, 'Изменено на 10', $event)">+10</button>
+        <!-- Короткая запись v-on => @ -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                counter: 0,
+                title: 'Счётчик'
+            },
+            methods: {
+                addCounter: function(num, str) {
+                    this.counter += num
+                    this.title = str
+
+                    if (num === 5) {
+                        event.target.style.color = 'blue'
+                    } else if (num === 10) {
+                        event.target.style.color = 'red'
+                    }
+                },
+                onHover: function(event) {
+                    event.target.style.color = 'red'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

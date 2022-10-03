@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>008 Event-Modifiers</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" @keyup.enter.up="alertValue">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+
+                // Стандартный метод нативного javascript
+                // alertValue: function(event) {
+                //     if (event.keyCode === 13) {
+                //         цыфра 13 соответствует кнопки enter
+
+                //         alert(event.target.value)
+                //     }
+                // }
+
+            
+                alertValue: function(event) {
+                        alert(event.target.value)
+                }
+            },
+        })
+    </script>
+</body>
+</html>
