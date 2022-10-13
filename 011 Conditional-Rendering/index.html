@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>011 Conditional-Rendering</title>
+</head>
+<body>
+    <div id="app">
+        <h1>011 Условный рендеринг</h1>
+
+        <h2 v-if="first">Title-1</h2>
+        <h2 v-else>Title-2</h2>
+        <button @click="first = !first">Toggle</button>
+
+        <hr>
+
+        <h2 v-show="show">Display-1</h2>
+        <h2 v-show="!show">Display-2</h2>
+        <button @click="show = !show">Toggle</button>
+
+        <hr>
+
+        <h2 v-if="char === 'a'">A</h2>
+        <h2 v-else-if="char === 'b'">B</h2>
+        <h2 v-else-if="char === 'c'">C</h2>
+        <h2 v-else>Not Match</h2>
+        <input type="text" v-model="char" name="" id="">
+        <hr>
+
+        <template v-if="isVisible">
+            <h2>I am title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, sequi?</p>
+        </template>
+
+        <template v-else>
+            <h2 style="color: red;">I am title</h2>
+            <p style="color: red;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, sequi?</p>
+        </template>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                first: true,
+                show: true,
+                char: "a",
+                isVisible: false
+            }
+        });
+    </script>
+</body>
+</html>

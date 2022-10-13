@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>013 Computed-Properties-and-Watchers</title>
+</head>
+<body>
+    <h1>013 Вычисляемые свойства и слежение</h1>
+    <div id="app">
+
+        <form>
+            <span>0 / 30</span>
+            <textarea v-model="textValue"></textarea>
+            <button>Число</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script>
+        new Vue ({
+            el: '#app',
+            data: {
+                textValue: ''
+            }
+        });
+    </script>
+</body>
+</html>
